@@ -6,6 +6,7 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 
 /**
 * struct format_specifier - Struct to hold format
@@ -17,8 +18,7 @@
 typedef struct format_specifier
 {
 	char specifier;
-
-	int (*ptr_function)(va_list args);
+	int (*ptr_function)(va_list);
 } format_specifier_t;
 
 int print_char(va_list args);

@@ -34,7 +34,14 @@ int _printf(const char *format, ...)
 			{
 				if (*format == specifiers[index].specifier)
 				{
-					count += specifiers[index].ptr_function(args);
+					if (*format == 'd' || *format == 'i')
+					{
+						count += specifiers[index].ptr_function(args);
+					}
+					else
+					{
+						count += specifiers[index].ptr_function(args);
+					}
 					break;
 				}
 				index++;
